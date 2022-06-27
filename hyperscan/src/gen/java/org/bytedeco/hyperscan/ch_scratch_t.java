@@ -12,12 +12,12 @@ import static org.bytedeco.hyperscan.global.hyperscan.*;
 
 
 /**
- * The stream identifier returned by \ref hs_open_stream().
+ * A Chimera scratch space.
  */
 @Opaque @Properties(inherit = org.bytedeco.hyperscan.presets.hyperscan.class)
-public class hs_stream_t extends Pointer {
+public class ch_scratch_t extends Pointer {
     /** Empty constructor. Calls {@code super((Pointer)null)}. */
-    public hs_stream_t() { super((Pointer)null); }
+    public ch_scratch_t() { super((Pointer)null); }
     /** Pointer cast constructor. Invokes {@link Pointer#Pointer(Pointer)}. */
-    public hs_stream_t(Pointer p) { super(p); }
+    public ch_scratch_t(Pointer p) { super(p); }
 }
