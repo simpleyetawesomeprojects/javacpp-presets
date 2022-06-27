@@ -40,7 +40,10 @@ import org.bytedeco.javacpp.tools.InfoMapper;
                     "hs/hs_common.h", "hs/hs_compile.h", "hs/hs_runtime.h", "hs/hs.h",
                     "hs/ch_common.h", "hs/ch_compile.h", "hs/ch_runtime.h", "hs/ch.h"
             },
-            link = {"hs@.5", "hs_runtime@.5"}
+            link = {
+                    "hs@.5", "hs_runtime@.5",
+                    "chimera", "hs", "hs_runtime"
+            }
         )
     },
     target = "org.bytedeco.hyperscan",
