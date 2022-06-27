@@ -36,8 +36,14 @@ import org.bytedeco.javacpp.tools.InfoMapper;
         @Platform(
             value = {"linux-x86_64", "macosx-x86_64", "windows-x86_64"},
             compiler = "cpp11",
-            include = {"hs/hs_common.h", "hs/hs_compile.h", "hs/hs_runtime.h", "hs/hs.h"},
-            link = {"hs@.5", "hs_runtime@.5"}
+            include = {
+                    "hs/hs_common.h", "hs/hs_compile.h", "hs/hs_runtime.h", "hs/hs.h",
+                    "hs/ch_common.h", "hs/ch_compile.h", "hs/ch_runtime.h", "hs/ch.h"
+            },
+            link = {
+                    "hs@.5", "hs_runtime@.5",
+                    "chimera", "hs", "hs_runtime"
+            }
         )
     },
     target = "org.bytedeco.hyperscan",

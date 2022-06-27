@@ -12,11 +12,10 @@ import static org.bytedeco.hyperscan.global.hyperscan.*;
 
 
 /**
- * The type of the callback function that will be used by Hyperscan to allocate
- * more memory at runtime as required, for example in \ref hs_open_stream() to
- * allocate stream state.
+ * The type of the callback function that will be used by Chimera to allocate
+ * more memory at runtime as required.
  *
- * If Hyperscan is to be used in a multi-threaded, or similarly concurrent
+ * If Chimera is to be used in a multi-threaded, or similarly concurrent
  * environment, the allocation function will need to be re-entrant, or
  * similarly safe for concurrent use.
  *
@@ -26,11 +25,11 @@ import static org.bytedeco.hyperscan.global.hyperscan.*;
  *      A pointer to the region of memory allocated, or NULL on error.
  */
 @Properties(inherit = org.bytedeco.hyperscan.presets.hyperscan.class)
-public class hs_alloc_t extends FunctionPointer {
+public class ch_alloc_t extends FunctionPointer {
     static { Loader.load(); }
     /** Pointer cast constructor. Invokes {@link Pointer#Pointer(Pointer)}. */
-    public    hs_alloc_t(Pointer p) { super(p); }
-    protected hs_alloc_t() { allocate(); }
+    public    ch_alloc_t(Pointer p) { super(p); }
+    protected ch_alloc_t() { allocate(); }
     private native void allocate();
     public native Pointer call(@Cast("size_t") long size);
 }
